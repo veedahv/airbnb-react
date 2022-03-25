@@ -10,45 +10,36 @@ export default function Activities() {
             image: sport,
             price: 136,
             rating: '5.0',
-            rank: 6
+            rank: 6,
+            location: "Offline",
+            openSpots: 0
         },
         {
             title: 'Learn wedding photography     ',
             image: wedding,
             price: 125,
             rating: '5.0',
-            rank: 30
+            rank: 30,
+            location: "Online",
+            openSpots: 5
         },
         {
             title: 'Group Mountain Biking',
             image: mountain,
             price: 50,
             rating: '4.8',
-            rank: 2
+            rank: 2,
+            location: "Offline",
+            openSpots: 5
         }
     ]
     return (
         <section className="section">
             <div className="container">
                 <div className="card-container">
-                {/* {this.props.question.answers.map((answer, i) => {     
-           console.log("Entered");                 
-           // Return the element. Also pass key     
-           return (<Answer key={answer} answer={answer} />) 
-        })} */}
-                    {/* array.forEach(element => {
-                        
-                    }); */}
-
                     {allActivities.map((activity, i) => {
-
-                        // console.log(activity)
-                        // }
-                        // function(activity) {
                         return (<Card key={activity.title} activity={activity} />)
                     })}
-                    {/* <Card activity={'activity'} /> */}
-                    {/* <Card /> */}
                 </div>
             </div>
         </section>

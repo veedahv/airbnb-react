@@ -1,13 +1,18 @@
-import star from "../assets/images/Star.png"
-import wedding from "../assets/images/wedding.jpg"
+import star from "../assets/images/Star.png";
 
 export default function Card({activity}) {
-    console.log(activity);
-    // console.log(activity.activity);
     let item = activity;
+    let badgeText;
+    if (item.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (item.location === "Online") {
+        badgeText = "ONLINE"     
+    }
+
     return (
         <div className="card">
-            <img src={item.image} alt={item.title} className="card-img" width="250px" />
+            {badgeText && <div className="badge">{badgeText}</div>}
+            <img src={item.image} alt={item.title} className="card-img" height="280px" />
             <div className="card-body">
                 <div className="rating">
                     <img src={star} alt="rating star" className="star" width="15px" />
